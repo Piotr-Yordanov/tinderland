@@ -19,7 +19,7 @@ const getInitialTheme = () => {
 
 export const ThemeContext = React.createContext();
 
-export const ThemeProvider = ({ initialTheme, children }) => {
+export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = React.useState(getInitialTheme);
 
   const rawSetTheme = (rawTheme) => {
@@ -31,10 +31,6 @@ export const ThemeProvider = ({ initialTheme, children }) => {
 
     localStorage.setItem('color-theme', rawTheme);
   };
-
-  if (initialTheme) {
-    rawSetTheme(initialTheme);
-  }
 
   React.useEffect(() => {
     rawSetTheme(theme);
