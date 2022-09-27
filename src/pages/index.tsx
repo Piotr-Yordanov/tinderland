@@ -18,7 +18,7 @@ export default function HomePage() {
   return (
     <Layout>
       <Seo />
-      <div className='layout w-[800px] pt-24'>
+      <div className='layout mx-auto pt-24 lg:w-[800px]'>
         <div dangerouslySetInnerHTML={{ __html: content }}></div>
       </div>
     </Layout>
